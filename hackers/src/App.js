@@ -8,7 +8,8 @@ class App extends React.Component {
     this.state = {
       query: '',
       data: [],
-      secretDay:''
+      secretDay:'',
+      idData: ''
     }
     this.handleFetchData = this.handleFetchData.bind(this);
   }
@@ -29,17 +30,26 @@ class App extends React.Component {
 
   handleChangeValue = (event) => {
     const queryValue = event.currentTarget.value;
+    const inputId = event.currentTarget.getAttribute ('data-id');
     console.log(queryValue);
+    console.log(inputId);
     this.setState({
-      query: queryValue
-    })
+      query: queryValue,
+      idData: inputId
+    });
+    this.handleFilters();
+  }
+
+  handleFilters=()=>{
+    const filteredData = this.data.filter(info=>info.this.state.idData.includes(this.state.query));
+    return console.log (filteredData);
   }
 
   render() {
-    const { data, query, secretDay } = this.state;
+    const { data, query, secretDay, idData } = this.state;
     return (
       <div className="app--container">
-        <Page data={data} query={query} handleChangeValue={this.handleChangeValue} secretDay={secretDay} />
+        <Page data={data} query={query} filteredData={this.filteredData} handleChangeValue={this.handleChangeValue} secretDay={secretDay} idData={idData}/>
       </div>
     );
   }

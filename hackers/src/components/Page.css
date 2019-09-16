@@ -1,24 +1,20 @@
 *{
-    margin: 0px;
+    margin: 10px;
     padding: 0px;
     font-family: 'Ubuntu Mono', monospace;
 }
 .person--data__container{
-    margin: 10px;
     border-top: 2px solid darkred;
     width: 50%;
 }
 .app--header{
-    margin: 10px;
     background-color: brown;
     width: 50%;
     font-size: 30px;
 }
 .input--mail{
-    margin: 10px;
     height: 30px;
 }
-.data--lenght{
-    margin: 10px;
-
+.input--name{
+    height: 30px;
 }

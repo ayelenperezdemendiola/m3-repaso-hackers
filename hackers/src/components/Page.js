@@ -9,10 +9,8 @@ import PropTypes from 'prop-types';
 
 class Page extends React.Component {
     render() {
-
-        const { data, query, handleChangeValue, secretDay } = this.props;
-        const filteredData = data.filter(info => info.email.includes(query));
-
+        const { data, query, handleChangeValue, secretDay, filteredData } = this.props;
+        
         return (
             <React.Fragment>
                 <Header secretDay={secretDay}/>
